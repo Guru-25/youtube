@@ -4,15 +4,21 @@ body {
     padding: 20px;
     background-color: #1c1c1c;
     color: #fff;
+    margin: 0;
 }
-      
+
+h1, h3, h4, p {
+    margin: 10px 0;
+}
+
 .download-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
-      
+
 .download-button {
     display: inline-block;
     width: 200px;
@@ -25,13 +31,13 @@ body {
     margin: 10px;
     text-align: center;
     box-sizing: border-box;
-  }
-  
-  .download-button:hover {
+}
+
+.download-button:hover {
     background-color: #45a049;
     text-decoration: none;
-  }
-      
+}
+
 .copy-button {
     padding: 10px 20px;
     background-color: #008CBA;
@@ -46,7 +52,31 @@ a {
     color: #ebdf58;
     text-decoration: none;
 }
-  
+
 a:hover {
     text-decoration: underline;
+}
+
+textarea {
+    width: 80%;
+    max-width: 500px;
+}
+
+@media screen and (max-width: 600px) {
+    .download-button {
+        width: 80%;
+        height: auto;
+        padding: 20px;
+        font-size: 16px;
+    }
+    
+    textarea {
+        width: 90%;
+    }
+    
+    .copy-button {
+        width: 80%;
+        padding: 15px;
+        font-size: 16px;
+    }
 }
