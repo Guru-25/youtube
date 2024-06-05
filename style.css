@@ -38,7 +38,7 @@ h1, h3, h4, p {
     text-decoration: none;
 }
 
-.copy-button {
+.copy-button, .toggle-button {
     padding: 10px 20px;
     background-color: #008CBA;
     color: white;
@@ -46,6 +46,10 @@ h1, h3, h4, p {
     border-radius: 4px;
     cursor: pointer;
     margin-top: 20px;
+}
+
+.toggle-button {
+    margin-bottom: 20px;
 }
 
 a {
@@ -62,6 +66,11 @@ textarea {
     max-width: 500px;
 }
 
+#video-container {
+    display: none; /* Hidden by default */
+    margin-bottom: 20px;
+}
+
 @media screen and (max-width: 600px) {
     .download-button {
         width: 80%;
@@ -74,9 +83,14 @@ textarea {
         width: 90%;
     }
     
-    .copy-button {
+    .copy-button, .toggle-button {
         width: 80%;
         padding: 15px;
         font-size: 16px;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
     }
 }
