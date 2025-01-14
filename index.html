@@ -1,41 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="dark">
 <head>
-  <title>YouTube Premium</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:image" content="favicon.ico">
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <title>YouTube Premium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>YouTube Premium</h1>
+    <main class="container">
+        <h1>YouTube Premium</h1>
 
-    <button class="toggle-button" onclick="toggleVideo()">Video Guide</button>
-    <div id="video-container" class="video-container">
-        <video width="856" height="1920" controls>
-            <source src="video.webm" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+        <button class="toggle-button contrast" onclick="toggleVideo()">Watch Installation Guide</button>
+        <div id="video-container" class="video-container">
+            <div class="video-wrapper">
+                <iframe 
+                    width="100%" 
+                    height="500"
+                    src="https://odysee.com/$/embed/@Vijay:5/youtube-premium:9"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
 
-    <h3>Download these 2 apps</h3>
-  
-    <div class="download-container">
-        <a href="https://github.com/Guru-25/revanced-magisk-module/releases/download/16/youtube-revanced-v19.47.53-all.apk" class="download-button">
-            YouTube v19.47.53
-            <br><br>
-            30-12-2024
-        </a>
-        
-        <a href="https://github.com/ReVanced/GmsCore/releases/download/v0.3.1.4.240913/app.revanced.android.gms-240913008-signed.apk" class="download-button">
-            microG v0.3.1.4
-            <br><br>
-            05-04-2024
-        </a>
-    </div>
+        <article>
+            <h3>Download these 2 apps</h3>
+            
+            <div class="download-container">
+                <a href="https://github.com/Guru-25/revanced-magisk-module/releases/download/16/youtube-revanced-v19.47.53-all.apk" class="download-button">
+                    <strong>YouTube v19.47.53</strong>
+                    <small>30-12-2024</small>
+                </a>
+                
+                <a href="https://github.com/ReVanced/GmsCore/releases/download/v0.3.1.4.240913/app.revanced.android.gms-240913008-signed.apk" class="download-button">
+                    <strong>microG v0.3.1.4</strong>
+                    <small>05-04-2024</small>
+                </a>
+            </div>
 
-    <h4>Paste this in Settings -> ReVanced -> Misc -> Import / Export</h4>
-    
-    <textarea id="configText" rows="5" cols="50" readonly>
+            <h4>Paste this in Settings → ReVanced → Misc → Import / Export</h4>
+            
+            <textarea id="configText" rows="5" readonly>
 "announcement_last_id": 10,
 "copy_video_url_timestamp": false,
 "disable_resuming_shorts_player": true,
@@ -45,17 +51,22 @@
 "swipe_brightness": false,
 "swipe_volume": false,
 "switch_create_with_notifications_button": false</textarea>
-    
-    <br>
-    
-    <button class="copy-button" onclick="copyConfig()">Copy it</button>
+            
+            <button class="copy-button contrast" onclick="copyConfig()">Copy Configuration</button>
+        </article>
+
+        <footer>
+            <p>Follow live updates on <a href="https://telegram.me/+0KuprQ6kDKc3YWM9" target="_blank">Telegram</a></p>
+            <p><a href="https://github.com/Guru-25/youtube" target="_blank">Source Code</a></p>
+        </footer>
+    </main>
     
     <script>
         function copyConfig() {
             var configText = document.getElementById("configText");
             configText.select();
             document.execCommand("copy");
-            alert("Copied to clipboard!");
+            alert("Configuration copied to clipboard!");
         }
 
         function toggleVideo() {
@@ -67,12 +78,5 @@
             }
         }
     </script>
-
-    <br><br>
-
-    <p>Follow live updates on <a href="https://telegram.me/+0KuprQ6kDKc3YWM9" target="_blank">Telegram</a></p>    
-    <br><br><br>
-    <a href="https://github.com/Guru-25/youtube" target="_blank">Source Code</a>
-  
 </body>
 </html>
