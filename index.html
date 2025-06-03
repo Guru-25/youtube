@@ -1,78 +1,397 @@
 <!DOCTYPE html>
-<html data-theme="dark">
+<html lang="en">
 <head>
-    <title>YouTube Premium</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>YouTube Premium - Free Installation Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .step {
+            margin-bottom: 30px;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .step p {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 10px 10px 10px 0;
+            text-align: center;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        .obtainium-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            word-break: break-all;
+            font-size: 0.9rem;
+            padding: 15px 20px;
+            margin: 5px 0;
+            display: block;
+            text-align: left;
+        }
+
+        .obtainium-btn:hover {
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #856404;
+        }
+
+        .warning strong {
+            color: #8b4513;
+        }
+
+        .features {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .features h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .features li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .download-btn {
+                width: 100%;
+                margin: 10px 0;
+                padding: 15px;
+            }
+
+            .obtainium-btn {
+                font-size: 0.8rem;
+                padding: 12px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .step h3 {
+                font-size: 1.2rem;
+            }
+
+            .card {
+                padding: 15px;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-    <main class="container">
-        <h1>YouTube Premium</h1>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 YouTube Premium</h1>
+            <p>Installation Guide</p>
+        </div>
 
-        <button class="toggle-button contrast" onclick="toggleVideo()">Watch Installation Guide</button>
-        <div id="video-container" class="video-container">
-            <div class="video-wrapper">
-                <iframe 
-                    width="100%" 
-                    height="500"
-                    src="https://odysee.com/$/embed/@Vijay:5/youtube-premium:9?signature=3d814aabcaa1df25644cfed41a0a4dde16c17a34455e1122a450fd18209093ba4e72d839d0eebc1e80f5ca486bf722db0902d4ed556d64d4e112b27da513ebff&signature_ts=1737050040"
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
+        <div class="card">
+            <div class="features">
+                <h4>🌟 What You'll Get:</h4>
+                <ul>
+                    <li>Ad-free YouTube experience</li>
+                    <li>Background play functionality</li>
+                    <li>Picture-in-picture mode</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong>📱 Android Only:</strong> This guide is specifically for Android devices. Make sure you have "Install from Unknown Sources" enabled in your device settings.
             </div>
         </div>
 
-        <article>
-            <h3>Download these 2 apps</h3>
-            
-            <div class="download-container">
-                <a href="https://github.com/Guru-25/revanced-magisk-module/releases/download/37/youtube-revanced-v20.12.46-all.apk" class="download-button">
-                    <strong>YouTube v20.12.46</strong>
-                    <small>25-04-2025</small>
+        <div class="card">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>📥 Install Obtainium App</h3>
+                <p>First, download and install the Obtainium app manager. This app will help you manage and update the YouTube Premium app.</p>
+                <a href="https://github.com/ImranR98/Obtainium/releases/latest/download/app-release.apk" 
+                   class="download-btn" 
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Download Obtainium APK
                 </a>
-                
-                <a href="https://github.com/ReVanced/GmsCore/releases/download/v0.3.1.4.240913/app.revanced.android.gms-240913008-signed.apk" class="download-button">
-                    <strong>microG v0.3.1.4</strong>
-                    <small>05-04-2024</small>
-                </a>
+                <p><small>💡 You may need to enable "Install from Unknown Sources" in your Android settings to install this APK.</small></p>
             </div>
+        </div>
 
-            <h4>Paste this in Settings → Miscellaneous → Import / Export</h4>
-            
-            <textarea id="configText" rows="5" readonly>
+        <div class="card">
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>📺 Import YouTube</h3>
+                <p>After installing Obtainium, tap the link below to import the YouTube app:</p>
+                <a href="obtainium://app/%7B%22id%22%3A%22app.revanced.android.youtube%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FGuru-25%2Frevanced-magisk-module%22%2C%22author%22%3A%22Guru-25%22%2C%22name%22%3A%22YouTube%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22sortMethodChoice%5C%22%3A%5C%22date%5C%22%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22releaseTitleAsVersion%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22youtube%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22%5C%22%2C%5C%22appAuthor%5C%22%3A%5C%22%5C%22%2C%5C%22shizukuPretendToBeGooglePlay%5C%22%3Afalse%2C%5C%22allowInsecure%5C%22%3Afalse%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%2C%5C%22refreshBeforeDownload%5C%22%3Afalse%7D%22%2C%22overrideSource%22%3Anull%7D" 
+                   class="download-btn obtainium-btn">
+                    Import YouTube to Obtainium
+                </a>
+                <p><small>🔗 This special link will automatically configure YouTube in Obtainium when tapped on your Android device.</small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>🔧 Import microG Services</h3>
+                <p>Next, import the microG Services app, which is required for the YouTube app to function properly:</p>
+                <a href="obtainium://app/%7B%22id%22%3A%22app.revanced.android.gms%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FReVanced%2FGmsCore%22%2C%22author%22%3A%22ReVanced%22%2C%22name%22%3A%22microG%20Services%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22sortMethodChoice%5C%22%3A%5C%22date%5C%22%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22releaseTitleAsVersion%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22%5C%22%2C%5C%22appAuthor%5C%22%3A%5C%22%5C%22%2C%5C%22shizukuPretendToBeGooglePlay%5C%22%3Afalse%2C%5C%22allowInsecure%5C%22%3Afalse%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%2C%5C%22refreshBeforeDownload%5C%22%3Afalse%7D%22%2C%22overrideSource%22%3Anull%7D" 
+                   class="download-btn obtainium-btn">
+                    Import microG Services to Obtainium
+                </a>
+                <p><small>⚙️ microG Services provides the necessary Google services framework for the YouTube app.</small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>🚀 Install and Enjoy</h3>
+                <p>Once both apps are imported into Obtainium:</p>
+                <ol style="padding-left: 20px; color: #555;">
+                    <li>Install microG Services first</li>
+                    <li>Then install the YouTube app</li>
+                    <li>Open YouTube and enjoy premium features!</li>
+                </ol>
+                <div style="background: #e8f5e8; border-radius: 10px; padding: 15px; margin-top: 20px; border-left: 4px solid #27ae60;">
+                    <p style="margin: 0; color: #2d5a3d;"><strong>💡 Pro Tip:</strong> You can easily update YouTube to the latest version through Obtainium whenever new updates are available. Just open Obtainium and check for updates!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3>🎨 Optional: Customize UI (Recommended)</h3>
+                <p>For a YouTube experience similar to the original app, you can apply these optional settings:</p>
+                <div style="background: #f8f9fa; border-radius: 8px; padding: 15px; margin: 15px 0; border: 1px solid #e9ecef;">
+                    <p style="margin-bottom: 10px; font-weight: bold; color: #495057;">📍 Navigation:</p>
+                    <p style="margin-bottom: 15px; color: #6c757d; font-size: 0.9rem;">Go to <strong>YouTube Settings → Miscellaneous → Import / Export</strong></p>
+                    <p style="margin-bottom: 10px; font-weight: bold; color: #495057;">📋 Configuration to paste:</p>
+                    <div style="text-align: right; margin-bottom: 10px;">
+                        <button onclick="copyConfig()" id="copyBtn" style="background: #28a745; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 0.8rem; transition: background 0.3s ease;">
+                            📋 Copy
+                        </button>
+                    </div>
+                    <pre id="configCode" style="background: #2d3748; color: #e2e8f0; padding: 15px; border-radius: 5px; overflow-x: auto; font-size: 0.85rem; line-height: 1.4; margin: 0;">
 "copy_video_url_timestamp": false,
 "hide_create_button": false,
 "hide_crowdfunding_box": true,
 "hide_shorts_button": false,
-"switch_create_with_notifications_button": false</textarea>
-            
-            <button class="copy-button contrast" onclick="copyConfig()">Copy Configuration</button>
-        </article>
+"switch_create_with_notifications_button": false
+</pre>
+                </div>
+                <p><small>⚡ This configuration hides crowdfunding boxes and optimizes the interface for a cleaner experience.</small></p>
+            </div>
+        </div>
 
-        <footer>
-            <p>Follow live updates on <a href="https://telegram.me/+0KuprQ6kDKc3YWM9" target="_blank">Telegram</a></p>
-            <p><a href="https://github.com/Guru-25/youtube" target="_blank">Source Code</a></p>
-        </footer>
-    </main>
-    
+        <div class="card" style="text-align: center; background: linear-gradient(135deg, #74b9ff, #0984e3); color: white;">
+            <h3 style="color: white; margin-bottom: 15px;">❤️ Support This Project</h3>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">If this guide helped you, consider supporting the developer to keep this project alive and updated!</p>
+            <a href="https://gururaja.in/donate" 
+               class="download-btn" 
+               target="_blank"
+               rel="noopener noreferrer"
+               style="background: rgba(255,255,255,0.2); border: 2px solid white; color: white; backdrop-filter: blur(10px);">
+                ☕ Support via Donation
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>🎉 Enjoy your free YouTube Premium experience!</p>
+            <p><small>This guide is for educational purposes.</small></p>
+        </div>
+    </div>
+
     <script>
-        function copyConfig() {
-            var configText = document.getElementById("configText");
-            configText.select();
-            document.execCommand("copy");
-            alert("Configuration copied to clipboard!");
-        }
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click analytics for buttons (if needed)
+            const buttons = document.querySelectorAll('.download-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log('Button clicked:', this.textContent.trim());
+                });
+            });
 
-        function toggleVideo() {
-            var videoContainer = document.getElementById("video-container");
-            if (videoContainer.style.display === "none" || videoContainer.style.display === "") {
-                videoContainer.style.display = "block";
-            } else {
-                videoContainer.style.display = "none";
-            }
+            // Add smooth scrolling for better UX
+            document.documentElement.style.scrollBehavior = 'smooth';
+        });
+
+        // Copy configuration function
+        function copyConfig() {
+            const configText = `{
+"copy_video_url_timestamp": false,
+"hide_create_button": false,
+"hide_crowdfunding_box": true,
+"hide_shorts_button": false,
+"switch_create_with_notifications_button": false
+}`;
+            
+            navigator.clipboard.writeText(configText).then(function() {
+                // Success feedback
+                const btn = document.getElementById('copyBtn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✅ Copied!';
+                btn.style.background = '#20c997';
+                
+                setTimeout(function() {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '#28a745';
+                }, 2000);
+            }).catch(function() {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = configText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Success feedback
+                const btn = document.getElementById('copyBtn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✅ Copied!';
+                btn.style.background = '#20c997';
+                
+                setTimeout(function() {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '#28a745';
+                }, 2000);
+            });
         }
     </script>
 </body>
-</html>
+</html> 
