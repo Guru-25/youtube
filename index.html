@@ -352,13 +352,12 @@
 
         // Copy configuration function
         function copyConfig() {
-            const configText = `{
-"copy_video_url_timestamp": false,
+            const configText = 
+`"copy_video_url_timestamp": false,
 "hide_create_button": false,
 "hide_crowdfunding_box": true,
 "hide_shorts_button": false,
-"switch_create_with_notifications_button": false
-}`;
+"switch_create_with_notifications_button": false`;
             
             navigator.clipboard.writeText(configText).then(function() {
                 // Success feedback
