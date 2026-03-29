@@ -1,5 +1,5 @@
 # YouTube
-A simple site to download my patched version of ReVanced App for my normie friends :)
+A simple site to download my patched version of Morphe App for my normie friends :)
 
 ## Credits and Thanks to
-- [ReVanced](https://github.com/ReVanced) team for their awesome work!
+- [MorpheApp](https://github.com/MorpheApp) team for their awesome work!
